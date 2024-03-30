@@ -5,6 +5,34 @@ import tick from './tick.png'
 import "./Tablestruc.css"
 
 export function Tablestruc() {
+    const[x,setX]=useState(500);
+    const handleUpClick=()=>{
+        setX(prevX=>prevX+1);
+    }
+    const handleDownClick = () =>{
+        if (x>0){
+            setX(prevX => prevX -1)
+        }
+    };
+    const[x2,setX2]=useState(50);
+    const handleUpClick2=()=>{
+        setX2(prevX2 => prevX2+1);
+    }
+    const handleDownClick2 = () =>{
+        if (x2>0){
+            setX2(prevX2 => prevX2 -1)
+        }
+    };
+    const[x3,setX3]=useState(50);
+    const handleUpClick3=()=>{
+        setX3(prevX3 => prevX3+1);
+    }
+    const handleDownClick3 = () =>{
+        if (x3>0){
+            setX3(prevX3 => prevX3 -1)
+        }
+    };
+    
     return (
         <>
             <div class="upper"><table class="table">
@@ -26,9 +54,9 @@ export function Tablestruc() {
 
                             
                         </td>
-                        <td  class="f"><input type="text" class="text" ></input></td>
-                        <td class="up"><button class="dbtn"></button></td>
-                        <td class="down"><button class="dbtn"></button></td>
+                         <td  class="f"><input type="text" value={`${x} ml`} class="text" ></input></td>
+                        <td class="up"><button class="dbtn" onClick={handleUpClick}></button></td>
+                        <td class="down"><button class="dbtn" onClick={handleDownClick}></button></td>
                         <td class="myimg"><img class="h" src={wrong}height="13px"></img></td>
                     </tr>
 
@@ -53,9 +81,9 @@ export function Tablestruc() {
 
 
                         </td>
-                        <td class="f"><input type="text" class="text" ></input></td>
-                        <td class="up"><button class="dbtn"></button></td>
-                        <td class="down"><button class="dbtn"></button></td>
+                        <td class="f"><input type="text" value={`${x2} mg`} class="text" ></input></td>
+                        <td class="up"><button class="dbtn" onClick={handleUpClick2}></button></td>
+                        <td class="down"><button class="dbtn" onClick={handleDownClick2}></button></td>
                         <td class="myimg"><img class="h" src={tick} height="13px"></img></td>
                     </tr>
 
@@ -79,9 +107,9 @@ export function Tablestruc() {
 
 
                         </td>
-                        <td class="f"><input type="text" class="text" ></input></td>
-                        <td class="up"><button class="dbtn"></button></td>
-                        <td class="down"><button class="dbtn"></button></td>
+                        <td class="f"><input type="text" value={`${x3} mg`}  class="text" ></input></td>
+                        <td class="up"><button class="dbtn" onClick={handleUpClick3}></button></td>
+                        <td class="down"><button class="dbtn" onClick={handleDownClick3}></button></td>
                         <td class="myimg"><img class="h" src={tick} height="13px"></img></td>
                     </tr>
 
